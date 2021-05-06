@@ -999,8 +999,13 @@ setup(void)
 	/* init appearance */
 	wx = 0;
 	wy = 0;
+	/*
 	ww = 800;
 	wh = 600;
+	*/
+	/* xterm geometry; -g 499x316 starts a float window in bspwm? */
+	ww = 499;
+	wh = 316;
 	isfixed = 0;
 
 	if (geometry) {
