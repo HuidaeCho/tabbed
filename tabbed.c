@@ -868,7 +868,9 @@ propertynotify(const XEvent *e)
 			}
 		}
 		XFree(wmh);
-	} else if (ev->state != PropertyDelete && ev->atom == XA_WM_NAME &&
+	} else if (ev->state != PropertyDelete &&
+		   /* https://git.suckless.org/dwm/file/dwm.c.html#l1239 */
+		   (ev->atom == XA_WM_NAME || ev->atom == wmatom[WMName]) &&
 	           (c = getclient(ev->window)) > -1) {
 		updatetitle(c);
 	}
